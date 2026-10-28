@@ -1,0 +1,51 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+import { APP_CONFIG } from "@/config/app-config";
+
+import { starCountUrl } from "./star-count-url";
+
+const repositoryStarsUrl = starCountUrl(APP_CONFIG.repository);
+
+type GitHubStarsResponse = {
+  count: number;
+};
+
+export function useGitHubStarCount(initialCount: number | null) {
+  const [starCount, setStarCount] = useState(initialCount);
+
+  useEffect(() => {
+    if (initialCount !== null) return;
+
+    const controller = new AbortController();
+
+    async function loadStarCount() {
+      try {
+        const response = await fetch(repositoryStarsUrl, {
+          headers: {
+            Accept: "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2026-03-10",
+          },
+          signal: controller.signal,
+        });
+
+        if (!response.ok) return;
+
+        const data = (await response.json()) as GitHubStarsResponse;
+
+        if (Number.isFinite(data.count)) {
+          setStarCount(data.count);
+        }
+      } catch {
+        return;
+      }
+    }
+
+    void loadStarCount();
+
+    return () => controller.abort();
+  }, [initialCount]);
+
+  return starCount;
+}

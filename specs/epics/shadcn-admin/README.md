@@ -8,7 +8,7 @@ baseline that makes a copy of it somebody else's in one landing.**
 
 | | |
 |---|---|
-| Status | In progress — SA0 on main |
+| Status | In progress — SA1 on main: the site runs on Workers |
 | Upstream | [arhamkhnz/next-shadcn-admin-dashboard](https://github.com/arhamkhnz/next-shadcn-admin-dashboard), at `89f28da` (2026-10-27), MIT |
 | Reference | [portfolio-starter-kit](https://github.com/sourceplane/portfolio-starter-kit) — the same scaffolding, tests and bootstrap |
 | Key | `SA` |
