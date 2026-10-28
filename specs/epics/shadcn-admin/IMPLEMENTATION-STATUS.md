@@ -4,7 +4,7 @@
 |---|---|---|
 | SA0 — the spec | ✅ | the repository's first commit |
 | SA1 — the admin dashboard on Workers | ✅ | SA-2 |
-| SA2 — a baseline | planned | SA-3 |
+| SA2 — a baseline | ✅ | SA-3, tagged `baseline-v1` |
 
 ## Departures from the upstream template
 
