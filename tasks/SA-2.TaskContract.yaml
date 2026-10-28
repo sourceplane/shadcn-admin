@@ -1,0 +1,19 @@
+apiVersion: orun.io/v1
+kind: TaskContract
+metadata:
+  name: SA-2
+  title: "The admin dashboard on Workers"
+spec:
+  goal: Studio Admin runs on Cloudflare Workers + Static Assets through OpenNext inside Workers Free, its fonts self-hosted and its origin the environment's, and has its tests and a README that says how it maps to Vercel
+  affects:
+    - apps/web
+    - tests/web
+    - pnpm-lock.yaml
+    - pnpm-workspace.yaml
+    - README.md
+    - .gitignore
+  doneWhen:
+    - pnpm typecheck, lint, test and build are green
+    - wrangler dev serves every route the template has
+    - the Worker is under Workers Free's 3 MiB gzipped
+  gates: []

@@ -1,0 +1,31 @@
+# The epic's declaration. metadata.name equals the directory name; metadata.key
+# is the task-key prefix this epic reserves (SA → SA-1, SA-2, …). Owner, target
+# date and health are the platform's — never written here.
+apiVersion: orun.io/v1
+kind: Epic
+metadata:
+  name: shadcn-admin
+  key: SA
+spec:
+  title: "Vercel's Next.js & shadcn/ui Admin Dashboard on Cloudflare Workers"
+  summary: "Studio Admin — the Next.js 16 and shadcn/ui admin dashboard template, its dashboards, auth screens, theme presets and layout preferences over mock data — runs on Cloudflare Workers + Static Assets through @opennextjs/cloudflare, inside Workers Free, with its fonts self-hosted, inside the Cirrus baseline's repository conventions, and becomes an Orun baseline that takes a new site from nothing to live on stage and prod in one landing."
+  state: started
+  milestones:
+    - name: "SA0 — the spec"
+      exitCriteria:
+        - "the repository is born with its intent, CI, tooling and spec index, and this doc set and the task contracts are on main"
+      tasks: [SA-1]
+    - name: "SA1 — the admin dashboard on Workers"
+      exitCriteria:
+        - "apps/web is the upstream template, built by OpenNext into one Worker with Static Assets; every dashboard, auth screen, the landing page, the sitemap and robots serve from it"
+        - "the fonts are self-hosted: the build fetches nothing from Google Fonts, and the font picker and theme presets are unchanged"
+        - "the origin is the environment's: the metadata, the sitemap and robots name no domain of the template author's"
+        - "`pnpm typecheck`, `pnpm lint`, `pnpm test` and `pnpm build` are green, and the Worker fits Workers Free"
+        - "the README says how to run, test, preview and deploy it, and how every Vercel piece maps to Cloudflare"
+      tasks: [SA-2]
+    - name: "SA2 — a baseline"
+      exitCriteria:
+        - "blueprint.yaml (the console card) and repo-blueprint.yaml (the build) take a new site from nothing to live on stage and prod in one landing, then record it"
+        - "a site built from it carries the site only, renamed throughout to its own name, repository and Worker, with the template's credit intact"
+        - "Baseline CI is green: contract tests, generated component docs, the blueprint read by the pinned orun, the leak gate, the offline bootstrap and the end-to-end tier"
+      tasks: [SA-3]
