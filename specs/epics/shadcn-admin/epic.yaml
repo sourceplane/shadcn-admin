@@ -9,7 +9,7 @@ metadata:
 spec:
   title: "Vercel's Next.js & shadcn/ui Admin Dashboard on Cloudflare Workers"
   summary: "Studio Admin — the Next.js 16 and shadcn/ui admin dashboard template, its dashboards, auth screens, theme presets and layout preferences over mock data — runs on Cloudflare Workers + Static Assets through @opennextjs/cloudflare, inside Workers Free, with its fonts self-hosted, inside the Cirrus baseline's repository conventions, and becomes an Orun baseline that takes a new site from nothing to live on stage and prod in one landing."
-  state: started
+  state: completed
   milestones:
     - name: "SA0 — the spec"
       exitCriteria:
